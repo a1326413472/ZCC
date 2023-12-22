@@ -7,3 +7,8 @@ bool UZCCParamHandler::OnReceiveInt_Implementation()
 {
 	return true;
 }
+
+bool UZCCParamHandler::OnReceiveFloat_Implementation()
+{
+	return true;
+}

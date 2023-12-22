@@ -20,7 +20,7 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="ZCC|ParamHandler")
 	bool OnReceiveInt();
-//
-//	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="ZCC|ParamHandler")
-//	bool OnReceiveFloat();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="ZCC|ParamHandler")
+	bool OnReceiveFloat();
 };
