@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable)
 class ACC_API UZCCObject : public UObject
 {
 	GENERATED_BODY()
