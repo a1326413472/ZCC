@@ -3,12 +3,12 @@
 
 #include "Creation/ZCCParamHandler.h"
 
-bool UZCCParamHandler::OnReceiveInt_Implementation()
+bool UZCCParamHandler::OnReceiveInt_Implementation(UZCCCreationComponent* CreationComponent, FName IntParam)
 {
 	return true;
 }
 
-bool UZCCParamHandler::OnReceiveFloat_Implementation()
+bool UZCCParamHandler::OnReceiveFloat_Implementation(UZCCCreationComponent* CreationComponent, FName FloatParam)
 {
 	return true;
 }
