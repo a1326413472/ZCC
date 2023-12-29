@@ -34,3 +34,18 @@ public:
 	TArray<FZCCParamHandlerSetting> HandlerSettings;
 
 };
+
+/**
+ *
+ */
+UCLASS()
+class ACC_API UZCCGroupParamHandlerDataAsset : public UDataAsset
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ACC|Param Handler")
+	TMap<FName, UZCCParamHandlerDataAsset*> GroupParamDataAssets;
+
+};
