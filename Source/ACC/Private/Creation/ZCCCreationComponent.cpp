@@ -32,3 +32,14 @@ void UZCCCreationComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
+void UZCCCreationComponent::LoadCreation(FZCCCharacterCreation InCharacterCreation)
+{
+	// If First time
+	if (!bWasFirstTimeLoad)
+	{
+		bWasFirstTimeLoad = true;
+	}
+
+
+}
+

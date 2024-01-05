@@ -23,7 +23,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ACC|ParamHandler")
 	UZCCGroupParamHandlerDataAsset* GroupParamHandler;
 
-
 };
 
 
