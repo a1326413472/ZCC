@@ -20,7 +20,6 @@ void UZCCCreationComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
 }
 
 
@@ -38,6 +37,8 @@ void UZCCCreationComponent::LoadCreation(FZCCCharacterCreation InCharacterCreati
 	if (!bWasFirstTimeLoad)
 	{
 		bWasFirstTimeLoad = true;
+
+		
 	}
 
 
