@@ -42,6 +42,13 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	/// <summary>
+	/// @brief Used for init all sub object and default utilities (not called in begin play cause replication)
+	/// @摘要 用于初始化所有子对象和默认实用程序(未在begin play中调用引起同步)
+	/// </summary>
+	UFUNCTION(BlueprintCallable, Category = "ZCC|Creation")
+	void InitEssentials();
+
 	UFUNCTION(BlueprintCallable, Category="ZCC|Creation")
 	void LoadCreation(FZCCCharacterCreation InCharacterCreation);
 };

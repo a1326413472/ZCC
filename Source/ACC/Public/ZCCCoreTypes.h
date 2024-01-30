@@ -5,6 +5,23 @@
 #include "CoreMinimal.h"
 #include "ZCCCoreTypes.generated.h"
 
+UENUM(BlueprintType)
+enum class EZCCGender : uint8
+{
+	Male,
+	Female,
+	Other
+};
+
+UENUM(BlueprintType)
+enum class EZCCMaturity : uint8
+{
+	Baby,
+	Kid,
+	Adult,
+	Custom
+};
+
 
 USTRUCT(BlueprintType)
 struct ACC_API FZCCParam : public FTableRowBase

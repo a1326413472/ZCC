@@ -17,6 +17,11 @@ void UZCCGameSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 
 }
 
+UZCCGameData* UZCCGameSubsystem::GetGameData()
+{
+	return GameData;
+}
+
 UZCCObjectMgr* UZCCGameSubsystem::FindManagerByClass(const TSubclassOf<UZCCObjectMgr> ManagerClass) const
 {
 	UZCCObjectMgr* FoundObject = nullptr;

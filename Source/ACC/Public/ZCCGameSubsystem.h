@@ -22,14 +22,17 @@ private:
 
 protected:
 
-	UPROPERTY(BlueprintReadOnly, Category="ACC|Game")
+	UPROPERTY(BlueprintReadOnly, Category="ZCC|Game")
 	UZCCGameData* GameData;
 	
-	UPROPERTY(BlueprintReadOnly, Category="ACC|Game")
+	UPROPERTY(BlueprintReadOnly, Category="ZCC|Game")
 	TSet<UZCCObjectMgr*> OwnedManagers;
 
 
 public:
+
+	UFUNCTION(BlueprintPure, Category = "ZCC|Game")
+	UZCCGameData* GetGameData();
 
 	virtual UZCCObjectMgr* FindManagerByClass(const TSubclassOf<UZCCObjectMgr> ManagerClass) const;
 

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ZCCCoreTypes.h"
 #include "Engine/DataTable.h"
 #include "ZCCCreationTypes.generated.h"
 
@@ -25,6 +26,18 @@ struct ACC_API FZCCCharacterCreation : public FTableRowBase
 {
 	GENERATED_BODY()
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	FName Specie;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	EZCCMaturity Maturity = EZCCMaturity::Adult;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	EZCCGender Gender = EZCCGender::Male;
 
 
+	bool IsValid() const
+	{
+		return (!Specie.IsNone());
+	}
 };

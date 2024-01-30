@@ -21,3 +21,12 @@ UObject* UZCCObjectMgr::FindObjectByClass(const TSubclassOf<UObject> ObjectClass
 
 	return FoundObject;
 }
+
+UObject* UZCCObjectMgr::AddObjectByClass_Implementation(TSubclassOf<UObject> ObjectClass)
+{
+	UObject* Object = NewObject<UObject>(this, ObjectClass);
+
+	OwnedObjects.Add(Object);
+
+	return Object;
+}

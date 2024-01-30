@@ -31,16 +31,23 @@ void UZCCCreationComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
+void UZCCCreationComponent::InitEssentials()
+{
+
+
+}
+
 void UZCCCreationComponent::LoadCreation(FZCCCharacterCreation InCharacterCreation)
 {
+	UE_LOG(LogTemp, Warning, TEXT("LoadCreation Exeture!!!"));
 	// If First time
 	if (!bWasFirstTimeLoad)
 	{
 		bWasFirstTimeLoad = true;
-
+		InitEssentials();
 		
 	}
-
+	Creation = InCharacterCreation;
 
 }
 
