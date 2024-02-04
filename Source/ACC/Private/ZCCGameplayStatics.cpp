@@ -7,6 +7,12 @@
 #include "DAO/ZCCDAOMgr.h"
 #include "Kismet/GameplayStatics.h"
 
+UZCCParamHandlerMgr* UZCCGameplayStatics::GetParamHandlerMgr(const UObject* WorldContextObject)
+{
+	return UGameplayStatics::GetGameInstance(WorldContextObject)->GetSubsystem<UZCCGameSubsystem>()->
+																	GetParamHandlerMgr();
+}
+
 UZCCDAOBase* UZCCGameplayStatics::GetDAOByClass(const UObject* WorldContextObject, TSubclassOf<UZCCDAOBase> DAOClass)
 {
 	if (UZCCGameSubsystem* ZCCGameSubsystem = UGameplayStatics::GetGameInstance(WorldContextObject)->GetSubsystem<UZCCGameSubsystem>())

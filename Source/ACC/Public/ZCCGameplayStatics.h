@@ -16,6 +16,8 @@ class ACC_API UZCCGameplayStatics : public UBlueprintFunctionLibrary
 	GENERATED_BODY()
 
 public:
+	UFUNCTION(BlueprintPure, Category = "ZCC", meta = (WorldContext = "WorldContextObject"))
+	static UZCCParamHandlerMgr* GetParamHandlerMgr(const UObject* WorldContextObject);
 
 	UFUNCTION(BlueprintPure, Category = "ACC|Object", meta = (WorldContext = "WorldContextObject", DeterminesOutputType = "DAOClass"))
 	static UZCCDAOBase* GetDAOByClass(const UObject* WorldContextObject, TSubclassOf<UZCCDAOBase> DAOClass);

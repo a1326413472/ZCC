@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "ZCCParamHandler.h"
 #include "ZCCGPHDataAsset.generated.h"
 
 /// <summary>
@@ -17,7 +18,8 @@ struct FZCCParamHandlerSetting
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ZCC|Param Handler")
 	FName Key;
 
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC|Param Handler")
+	TSubclassOf<UZCCParamHandler> HandlerClass;
 };
 
 /**
@@ -33,6 +35,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ZCC|Param Handler")
 	TArray<FZCCParamHandlerSetting> HandlerSettings;
 
+	UFUNCTION(BlueprintPure, Category = "ZCC|Param Handler")
+	TSubclassOf<UZCCParamHandler> GetParamHandlerClass(FName Key);
 };
 
 /**
@@ -48,4 +52,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ACC|Param Handler")
 	TMap<FName, UZCCParamHandlerDataAsset*> GroupParamDataAssets;
 
+	UFUNCTION(BlueprintPure, Category = "ZCC|Param Handler")
+	UZCCParamHandlerDataAsset* GetGroupParamHandlerDataAsset(FName Key);
+
+	UFUNCTION(BlueprintPure, Category = "ZCC|Param Handler")
+	TSubclassOf<UZCCParamHandler> GetParamHandlerClass(FName GroupKey, FName Key);
 };

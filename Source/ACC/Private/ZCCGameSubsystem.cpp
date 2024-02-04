@@ -22,6 +22,11 @@ UZCCGameData* UZCCGameSubsystem::GetGameData()
 	return GameData;
 }
 
+UZCCParamHandlerMgr* UZCCGameSubsystem::GetParamHandlerMgr()
+{
+	return ParamHandlerMgr;
+}
+
 UZCCObjectMgr* UZCCGameSubsystem::FindManagerByClass(const TSubclassOf<UZCCObjectMgr> ManagerClass) const
 {
 	UZCCObjectMgr* FoundObject = nullptr;

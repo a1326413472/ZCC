@@ -73,3 +73,92 @@ struct ACC_API FZCCParam : public FTableRowBase
 		return (!Key.IsNone());
 	}
 };
+
+/// <summary>
+/// Struct : Int Param
+/// </summary>
+USTRUCT(BlueprintType)
+struct ACC_API FZCCIntParam : public FZCCParam
+{
+	GENERATED_BODY()
+
+	FZCCIntParam() : Value(0)
+	{
+	}
+	FZCCIntParam(FName InKey) : FZCCParam(InKey)
+	{
+	}
+	FZCCIntParam(FName InKey, FName InCustomInfo) : FZCCParam(InKey, InCustomInfo)
+	{
+	}
+	FZCCIntParam(FName InKey, FName InCustomInfo, int32 InValue) : FZCCParam(InKey, InCustomInfo), Value(InValue)
+	{
+	}
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	int32 Value;
+};
+
+USTRUCT(BlueprintType)
+struct ACC_API FZCCGroupParam
+{
+	GENERATED_BODY()
+
+	FZCCGroupParam() : Key()
+	{
+	}
+
+	FZCCGroupParam(FName InIdentifier) : Key(InIdentifier)
+	{
+	}
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	FName Key;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	TArray<FZCCIntParam> IntParams;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ZCC")
+	TArray<FName> Tags;
+
+	bool operator!=(const FZCCGroupParam Other) const
+	{
+		return !Equals(Other);
+	}
+
+	bool operator==(const FZCCGroupParam Other) const
+	{
+		return Equals(Other);
+	}
+
+	bool Equals(const FZCCGroupParam Other) const
+	{
+		return (Key == Other.Key);
+	}
+
+	bool IsValid() const
+	{
+		return (!Key.IsNone());
+	}
+
+	FZCCIntParam GetIntParam(const FName InKey)
+	{
+		const int32 Index = IntParams.Find(FZCCIntParam(InKey));
+		if (Index != INDEX_NONE)
+		{
+			return IntParams[Index];
+		}
+		return FZCCIntParam();
+	}
+
+	FZCCIntParam GetIntParamWithCI(const FName InKey, const FName InCustomInfo)
+	{
+		const int32 Index = IntParams.Find(FZCCIntParam(InKey, InCustomInfo));
+		if (Index != INDEX_NONE)
+		{
+			return IntParams[Index];
+		}
+		return FZCCIntParam();
+	}
+
+};

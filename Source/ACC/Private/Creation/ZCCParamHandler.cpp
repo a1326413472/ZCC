@@ -3,7 +3,7 @@
 
 #include "Creation/ZCCParamHandler.h"
 
-bool UZCCParamHandler::OnReceiveInt_Implementation(UZCCCreationComponent* CreationComponent, FName IntParam)
+bool UZCCParamHandler::OnReceiveInt_Implementation(UZCCCreationComponent* CreationComponent, FZCCIntParam IntParam)
 {
 	return true;
 }

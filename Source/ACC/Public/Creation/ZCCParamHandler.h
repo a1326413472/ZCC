@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ZCCObject.h"
+#include "ZCCCoreTypes.h"
 #include "ZCCParamHandler.generated.h"
 
 class UZCCCreationComponent;
@@ -21,7 +22,7 @@ public:
 	FName Key;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="ZCC|ParamHandler")
-	bool OnReceiveInt(UZCCCreationComponent*  CreationComponent, FName IntParam);
+	bool OnReceiveInt(UZCCCreationComponent*  CreationComponent, FZCCIntParam IntParam);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="ZCC|ParamHandler")
 	bool OnReceiveFloat(UZCCCreationComponent* CreationComponent, FName FloatParam);

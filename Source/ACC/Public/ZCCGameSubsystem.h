@@ -6,7 +6,9 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "ZCCGameData.h"
 #include "ZCCObjectMgr.h"
+#include <ZCCParamHandlerMgr.h>
 #include "ZCCGameSubsystem.generated.h"
+
 
 /**
  * 
@@ -25,6 +27,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category="ZCC|Game")
 	UZCCGameData* GameData;
 	
+	UPROPERTY(BlueprintReadOnly, Category = "ZCC|Game")
+	UZCCParamHandlerMgr* ParamHandlerMgr;
+
 	UPROPERTY(BlueprintReadOnly, Category="ZCC|Game")
 	TSet<UZCCObjectMgr*> OwnedManagers;
 
@@ -33,6 +38,9 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "ZCC|Game")
 	UZCCGameData* GetGameData();
+
+	UFUNCTION(BlueprintPure, Category = "ZCC|Game")
+	UZCCParamHandlerMgr* GetParamHandlerMgr();
 
 	virtual UZCCObjectMgr* FindManagerByClass(const TSubclassOf<UZCCObjectMgr> ManagerClass) const;
 
